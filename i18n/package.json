@@ -1,34 +1,15 @@
 {
-	"name": "@tauri-apps/quasar-app-extension-studio-i18n",
-	"version": "0.0.1",
-	"private": false,
-	"description": "common i18n locales and tools",
-	"homepage": "https://github.com/CodeEditorLand/Foundation#readme",
-	"bugs": {
-		"url": "https://github.com/CodeEditorLand/Foundation/issues"
-	},
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/CodeEditorLand/Foundation.git"
-	},
-	"license": "SEE LICENSE IN LICENSE",
-	"author": {
-		"name": "Playform",
-		"email": "Hello@Playform.Cloud",
-		"url": "https://playform.cloud"
-	},
-	"type": "module",
-	"main": "src/index.js",
-	"scripts": {
-		"prepublishOnly": "TypeScriptESBuild 'Source/**/*.ts'"
-	},
 	"dependencies": {
 		"vue-i18n": "^8.0.0"
 	},
+	"description": "common i18n locales and tools",
 	"devDependencies": {
 		"typescript-esbuild": "latest"
 	},
-	"publishConfig": {
-		"access": "public"
-	}
+	"main": "src/index.js",
+	"name": "@tauri-apps/quasar-app-extension-studio-i18n",
+	"scripts": {
+		"prepublishOnly": "TypeScriptESBuild 'Source/**/*.ts'"
+	},
+	"type": "module"
 }
