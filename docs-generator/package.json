@@ -1,28 +1,23 @@
 {
-	"browserslist": [
-		"last 1 version, not dead, ie >= 11"
-	],
-	"dependencies": {
-		"@quasar/extras": "1.5.1",
-		"lru-cache": "5.1.1",
-		"mermaid": "8.4.6",
-		"quasar": "1.9.2"
-	},
-	"description": "Tauri Documentation",
-	"devDependencies": {
-		"@quasar/app": "1.5.6",
-		"@quasar/quasar-app-extension-icon-genie": "1.1.3",
-		"@quasar/quasar-app-extension-qactivity": "1.0.0-beta.4",
-		"@quasar/quasar-app-extension-qmarkdown": "1.0.23",
-		"@quasar/quasar-app-extension-qmediaplayer": "1.0.17",
-		"@quasar/quasar-app-extension-qribbon": "1.0.0-beta.14",
-		"@vue/eslint-config-standard": "5.1.2",
-		"babel-eslint": "10.0.3",
-		"eslint-loader": "3.0.3",
-		"typescript-esbuild": "latest"
-	},
 	"name": "docs-generator",
-	"productName": "Tauri Documentation",
+	"version": "0.0.1",
+	"private": false,
+	"description": "Tauri Documentation",
+	"homepage": "https://github.com/CodeEditorLand/Foundation#readme",
+	"bugs": {
+		"url": "https://github.com/CodeEditorLand/Foundation/issues"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/CodeEditorLand/Foundation.git"
+	},
+	"license": "SEE LICENSE IN LICENSE",
+	"author": {
+		"name": "Playform",
+		"email": "Hello@Playform.Cloud",
+		"url": "https://playform.cloud"
+	},
+	"type": "module",
 	"scripts": {
 		"deploy:ssr-pm2": "pm2 start ./dist/ssr/index.js --name quasar-ssr",
 		"deploy:ssr-pm2_clusterize": "pm2 start ./dist/ssr/index.js --name quasar-ssr -i max",
@@ -37,5 +32,29 @@
 		"predeploy": "git pull && yarn install && quasar build -m ssr --debug && cd dist/ssr && yarn install",
 		"prepublishOnly": "TypeScriptESBuild 'Source/**/*.ts'"
 	},
-	"type": "module"
+	"browserslist": [
+		"last 1 version, not dead, ie >= 11"
+	],
+	"dependencies": {
+		"@quasar/extras": "1.5.1",
+		"lru-cache": "5.1.1",
+		"mermaid": "8.4.6",
+		"quasar": "1.9.2"
+	},
+	"devDependencies": {
+		"@quasar/app": "1.5.6",
+		"@quasar/quasar-app-extension-icon-genie": "1.1.3",
+		"@quasar/quasar-app-extension-qactivity": "1.0.0-beta.4",
+		"@quasar/quasar-app-extension-qmarkdown": "1.0.23",
+		"@quasar/quasar-app-extension-qmediaplayer": "1.0.17",
+		"@quasar/quasar-app-extension-qribbon": "1.0.0-beta.14",
+		"@vue/eslint-config-standard": "5.1.2",
+		"babel-eslint": "10.0.3",
+		"eslint-loader": "3.0.3",
+		"typescript-esbuild": "latest"
+	},
+	"publishConfig": {
+		"access": "public"
+	},
+	"productName": "Tauri Documentation"
 }
