@@ -1,8 +1,37 @@
 {
+	"author": {
+		"email": "Land@PlayForm.Cloud",
+		"name": "🌆 — Land —",
+		"url": "HTTPS://Land.PlayForm.Cloud"
+	},
+	"bugs": {
+		"url": "HTTPS://GitHub.Com/CodeEditorLand/TauriStudio/issues"
+	},
 	"dependencies": {},
 	"description": "common i18n locales and tools",
-	"devDependencies": {},
+	"devDependencies": {
+		"@playform/build": "0.0.7",
+		"@playform/document": "0.0.6"
+	},
+	"homepage": "HTTPS://GitHub.Com/CodeEditorLand/TauriStudio#readme",
+	"keywords": [
+		"land"
+	],
+	"license": "SEE LICENSE IN LICENSE",
 	"main": "src/index.js",
 	"name": "@tauri-apps/quasar-app-extension-studio-i18n",
-	"scripts": {}
+	"private": false,
+	"publishConfig": {
+		"access": "public"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+HTTPS://github.com/CodeEditorLand/TauriStudio.git"
+	},
+	"scripts": {
+		"Document": "Document 'Source/**/*.ts'",
+		"prepublishOnly": "Build 'Source/**/*.ts'"
+	},
+	"type": "module",
+	"version": "0.0.1"
 }

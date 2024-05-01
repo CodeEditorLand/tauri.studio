@@ -1,4 +1,12 @@
 {
+	"author": {
+		"email": "Land@PlayForm.Cloud",
+		"name": "🌆 — Land —",
+		"url": "HTTPS://Land.PlayForm.Cloud"
+	},
+	"bugs": {
+		"url": "HTTPS://GitHub.Com/CodeEditorLand/TauriStudio/issues"
+	},
 	"dependencies": {
 		"@quasar/babel-preset-app": "1.1.7",
 		"@quasar/extras": "1.4.1",
@@ -8,11 +16,32 @@
 		"quasar": "1.7.2"
 	},
 	"description": "Tauri Documentation",
+	"devDependencies": {
+		"@playform/build": "0.0.7",
+		"@playform/document": "0.0.6"
+	},
+	"homepage": "HTTPS://GitHub.Com/CodeEditorLand/TauriStudio#readme",
+	"keywords": [
+		"land"
+	],
+	"license": "SEE LICENSE IN LICENSE",
 	"name": "docs-generator",
+	"private": false,
+	"publishConfig": {
+		"access": "public"
+	},
 	"quasar": {
 		"ssr": true
 	},
+	"repository": {
+		"type": "git",
+		"url": "git+HTTPS://github.com/CodeEditorLand/TauriStudio.git"
+	},
 	"scripts": {
+		"Document": "Document 'Source/**/*.ts'",
+		"prepublishOnly": "Build 'Source/**/*.ts'",
 		"start": "node index.js"
-	}
+	},
+	"type": "module",
+	"version": "0.0.1"
 }
