@@ -43,7 +43,7 @@
 		"@quasar/extras": "1.16.11",
 		"lru-cache": "10.2.2",
 		"mermaid": "10.9.0",
-		"quasar": "2.15.4"
+		"quasar": "2.16.0"
 	},
 	"devDependencies": {
 		"@playform/build": "0.0.7",
