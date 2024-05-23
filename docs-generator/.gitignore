@@ -1,7 +1,6 @@
 .quasar
 .DS_Store
 .thumbs.db
-node_modules
 /src-cordova/node_modules
 /src-cordova/platforms
 /src-cordova/plugins
