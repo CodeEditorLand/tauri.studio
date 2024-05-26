@@ -14,9 +14,7 @@
 		"dev": "quasar dev",
 		"predeploy": "git pull && yarn install && quasar build -m ssr --debug && cd dist/ssr && yarn install"
 	},
-	"browserslist": [
-		"last 1 version, not dead, ie >= 11"
-	],
+	"browserslist": ["last 1 version, not dead, ie >= 11"],
 	"dependencies": {
 		"@quasar/extras": "1.16.11",
 		"lru-cache": "10.2.2",

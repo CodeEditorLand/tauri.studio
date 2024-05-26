@@ -87,54 +87,53 @@ And finally, there are a couple Rust communities on Discord that you can always 
 
 <script>
 export default {
-  name: 'Introduction',
+	name: "Introduction",
 
-  data () {
-    return {
-      graph: '',
-      flow: {}
-    }
-  },
+	data() {
+		return {
+			graph: "",
+			flow: {},
+		};
+	},
 
-  computed: {
-    graphOrientation () {
-      return this.$q.screen.lt.md ? 'TD' : 'LR'
-    },
-    toc:
-    {
-      get () {
-        return this.$store.state.common.toc
-      },
-      set (toc) {
-        this.$store.commit('common/toc', toc)
-      }
-    }
-  },
+	computed: {
+		graphOrientation() {
+			return this.$q.screen.lt.md ? "TD" : "LR";
+		},
+		toc: {
+			get() {
+				return this.$store.state.common.toc;
+			},
+			set(toc) {
+				this.$store.commit("common/toc", toc);
+			},
+		},
+	},
 
-  methods: {
-    onToc (toc) {
-      // add anything not picked uip by the markdown processor
-      // toc.push({ id: 'Tauri-API', label: 'Tauri API', level: 1, children: Array(0) })
-      // toc.push({ id: 'Donate', label: 'Donate', level: 1, children: Array(0) })
+	methods: {
+		onToc(toc) {
+			// add anything not picked uip by the markdown processor
+			// toc.push({ id: 'Tauri-API', label: 'Tauri API', level: 1, children: Array(0) })
+			// toc.push({ id: 'Donate', label: 'Donate', level: 1, children: Array(0) })
 
-      this.toc = toc
-    },
-    goMermaid (pattern) {
-      // null it so that we don't accidentally append
-      this.graph = null
+			this.toc = toc;
+		},
+		goMermaid(pattern) {
+			// null it so that we don't accidentally append
+			this.graph = null;
 
-      // otherwise mermaid gets lost
-      this.$nextTick(() => {
-        this.graph = this.$mermaid.render('mermaid', pattern)
-        // then measure height of svg
-        // resize card / dom
-      })
-    }
-  },
-  mounted () {
-    this.$nextTick(() => {
-      this.flow = {
-        lifecycle: `
+			// otherwise mermaid gets lost
+			this.$nextTick(() => {
+				this.graph = this.$mermaid.render("mermaid", pattern);
+				// then measure height of svg
+				// resize card / dom
+			});
+		},
+	},
+	mounted() {
+		this.$nextTick(() => {
+			this.flow = {
+				lifecycle: `
         graph ${this.graphOrientation}
 
           U-->JS
@@ -154,12 +153,12 @@ export default {
           BND((tauri<br>bundler))
           style BND stroke:#EFD3AF, stroke-width:4px
           DBG[WebView:Debug<br>with HMR]
-        `
-      }
-      this.goMermaid(this.flow.lifecycle)
-    })
-  }
-}
+        `,
+			};
+			this.goMermaid(this.flow.lifecycle);
+		});
+	},
+};
 </script>
 <style lang="stylus">
 #mermaid

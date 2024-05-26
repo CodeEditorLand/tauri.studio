@@ -17,77 +17,76 @@ Be aware, markdown is sensitive to being on left side, otherwise will wrap it in
 </template>
 
 <script>
-import Hero from '../components/Hero'
-import ExampleTitle from '../components/ExampleTitle'
-import ExampleCard from '../components/ExampleCard'
-import { slugify } from 'assets/page-utils'
-import getTagParts from '@quasar/quasar-ui-qmarkdown/src/util/getTagParts'
-import markdown from '../markdown/examples.md'
+import getTagParts from "@quasar/quasar-ui-qmarkdown/src/util/getTagParts";
+import { slugify } from "assets/page-utils";
+import ExampleCard from "../components/ExampleCard";
+import ExampleTitle from "../components/ExampleTitle";
+import Hero from "../components/Hero";
+import markdown from "../markdown/examples.md";
 
 export default {
-  name: 'Examples',
+	name: "Examples",
 
-  components: {
-    Hero,
-    ExampleTitle,
-    ExampleCard
-  },
+	components: {
+		Hero,
+		ExampleTitle,
+		ExampleCard,
+	},
 
-  data () {
-    return {
-      tempToc: [],
-      markdown: markdown
-    }
-  },
+	data() {
+		return {
+			tempToc: [],
+			markdown: markdown,
+		};
+	},
 
-  mounted () {
-    this.toc = []
-    this.tempToc = []
+	mounted() {
+		this.toc = [];
+		this.tempToc = [];
 
-    // example of top-level toc
-    this.addToToc('Basic')
+		// example of top-level toc
+		this.addToToc("Basic");
 
-    // example of second-level toc
-    this.addToToc('Tauri - Basic', 2)
+		// example of second-level toc
+		this.addToToc("Tauri - Basic", 2);
 
-    this.addToToc('Tauri - Advanced', 2)
+		this.addToToc("Tauri - Advanced", 2);
 
-    // add the toc to right drawer
-    this.toc = this.tempToc
-  },
+		// add the toc to right drawer
+		this.toc = this.tempToc;
+	},
 
-  computed: {
-    toc:
-    {
-      get () {
-        return this.$store.state.common.toc
-      },
-      set (toc) {
-        this.$store.commit('common/toc', toc)
-      }
-    }
-  },
+	computed: {
+		toc: {
+			get() {
+				return this.$store.state.common.toc;
+			},
+			set(toc) {
+				this.$store.commit("common/toc", toc);
+			},
+		},
+	},
 
-  methods: {
-    getTagParts,
-    addToToc (name, level = 1) {
-      const slug = slugify(name)
-      this.tempToc.push({
-        children: [],
-        id: slug,
-        label: name,
-        level: level
-      })
-    },
-    onToc (toc) {
-      // add anything not picked up by the markdown processor
-      // toc.push({ id: 'Tauri-API', label: 'Tauri API', level: 1, children: Array(0) })
-      // toc.push({ id: 'Donate', label: 'Donate', level: 1, children: Array(0) })
+	methods: {
+		getTagParts,
+		addToToc(name, level = 1) {
+			const slug = slugify(name);
+			this.tempToc.push({
+				children: [],
+				id: slug,
+				label: name,
+				level: level,
+			});
+		},
+		onToc(toc) {
+			// add anything not picked up by the markdown processor
+			// toc.push({ id: 'Tauri-API', label: 'Tauri API', level: 1, children: Array(0) })
+			// toc.push({ id: 'Donate', label: 'Donate', level: 1, children: Array(0) })
 
-      this.toc = toc
-    }
-  }
-}
+			this.toc = toc;
+		},
+	},
+};
 </script>
 
 <style>

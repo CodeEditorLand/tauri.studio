@@ -80,36 +80,36 @@
 
 <script>
 export default {
-  name: 'Hero',
-  data () {
-    return {
-      buttons: true,
-      height: 270,
-      heightName: 140,
-      heightPic: 250,
-      heightClaim: 100,
-      rightDrawerOpen: false
-    }
-  },
-  mounted () {
-    // this.scrolled(document.offsetTop)
-  },
-  computed: {
-    showDocs () {
-      const { showDocslink } = this.$route.meta
-      return typeof showDocslink === 'undefined' || showDocslink
-    },
-    current () {
-      return this.$route.meta.name
-    }
-  },
-  methods: {
-    sidebar () {
-      // const action = !!this.rightDrawerOpen
-      this.$store.commit('common/rightDrawerOpen', true)
-    }
-  }
-}
+	name: "Hero",
+	data() {
+		return {
+			buttons: true,
+			height: 270,
+			heightName: 140,
+			heightPic: 250,
+			heightClaim: 100,
+			rightDrawerOpen: false,
+		};
+	},
+	mounted() {
+		// this.scrolled(document.offsetTop)
+	},
+	computed: {
+		showDocs() {
+			const { showDocslink } = this.$route.meta;
+			return typeof showDocslink === "undefined" || showDocslink;
+		},
+		current() {
+			return this.$route.meta.name;
+		},
+	},
+	methods: {
+		sidebar() {
+			// const action = !!this.rightDrawerOpen
+			this.$store.commit("common/rightDrawerOpen", true);
+		},
+	},
+};
 </script>
 
 <style lang="stylus">

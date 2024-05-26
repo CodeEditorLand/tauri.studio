@@ -7,13 +7,13 @@
 
 <script>
 export default {
-  data () {
-    return {
-      var1: 10,
-      var2: 'string'
-    }
-  }
-}
+	data() {
+		return {
+			var1: 10,
+			var2: "string",
+		};
+	},
+};
 </script>
 
 <style lang="stylus">
