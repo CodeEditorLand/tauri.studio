@@ -1,36 +1,36 @@
 {
-	"@quasar/qmarkdown": {
-		"import_md": true,
-		"import_vmd": true
-	},
-	"@quasar/qribbon": {},
-	"@quasar/icon-genie": {
-		"minify_dev": "zopfli",
-		"minify_build": "zopfli",
-		"cordova": {
-			"background_color": "#000074",
-			"splashscreen_type": "pure"
-		},
-		"build_always": false,
-		"__internal": {
-			"dev": {
-				"spa": {
-					"iconHash": "1223e08a3a2fc40fc5fffd4fa30cb0be"
-				},
-				"pwa": {
-					"iconHash": "4a527af8aa5591a5914efd4d86627f43"
-				}
-			},
-			"build": {
-				"spa": {
-					"iconHash": "1223e08a3a2fc40fc5fffd4fa30cb0be"
-				},
-				"pwa": {
-					"iconHash": "4a527af8aa5591a5914efd4d86627f43"
-				}
-			}
-		}
-	},
-	"@quasar/qmediaplayer": {},
-	"@quasar/qactivity": {}
+  "@quasar/qmarkdown": {
+    "import_md": true,
+    "import_vmd": true
+  },
+  "@quasar/qribbon": {},
+  "@quasar/icon-genie": {
+    "minify_dev": "zopfli",
+    "minify_build": "zopfli",
+    "cordova": {
+      "background_color": "#000074",
+      "splashscreen_type": "pure"
+    },
+    "build_always": false,
+    "__internal": {
+      "dev": {
+        "spa": {
+          "iconHash": "1223e08a3a2fc40fc5fffd4fa30cb0be"
+        },
+        "pwa": {
+          "iconHash": "4a527af8aa5591a5914efd4d86627f43"
+        }
+      },
+      "build": {
+        "spa": {
+          "iconHash": "1223e08a3a2fc40fc5fffd4fa30cb0be"
+        },
+        "pwa": {
+          "iconHash": "4a527af8aa5591a5914efd4d86627f43"
+        }
+      }
+    }
+  },
+  "@quasar/qmediaplayer": {},
+  "@quasar/qactivity": {}
 }
