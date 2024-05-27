@@ -3,26 +3,26 @@
 </template>
 
 <script>
-import { copyHeading, slugify } from "assets/page-utils";
+import { copyHeading, slugify } from 'assets/page-utils'
 
 export default {
-	name: "ExampleTitle",
+  name: 'ExampleTitle',
 
-	props: {
-		title: {
-			type: String,
-			required: true,
-		},
-	},
+  props: {
+    title: {
+      type: String,
+      required: true
+    }
+  },
 
-	computed: {
-		slugifiedTitle() {
-			return slugify(this.title);
-		},
-	},
+  computed: {
+    slugifiedTitle () {
+      return slugify(this.title)
+    }
+  },
 
-	methods: {
-		copyHeading,
-	},
-};
+  methods: {
+    copyHeading
+  }
+}
 </script>

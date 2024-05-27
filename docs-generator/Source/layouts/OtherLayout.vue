@@ -42,12 +42,12 @@
 
 <script>
 export default {
-	// name: 'LayoutName',
+  // name: 'LayoutName',
 
-	data() {
-		return {
-			leftDrawer: true,
-		};
-	},
-};
+  data () {
+    return {
+      leftDrawer: true
+    }
+  }
+}
 </script>

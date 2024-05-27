@@ -1,9 +1,9 @@
-import Vue from "vue";
-import Vuex from "vuex";
+import Vue from 'vue'
+import Vuex from 'vuex'
 
-import common from "./common";
+import common from './common'
 
-Vue.use(Vuex);
+Vue.use(Vuex)
 
 /*
  * If not building with SSR mode, you can
@@ -11,15 +11,15 @@ Vue.use(Vuex);
  */
 
 export default function (/* { ssrContext } */) {
-	const Store = new Vuex.Store({
-		modules: {
-			common,
-		},
+  const Store = new Vuex.Store({
+    modules: {
+      common
+    },
 
-		// enable strict mode (adds overhead!)
-		// for dev mode only
-		strict: process.env.DEV,
-	});
+    // enable strict mode (adds overhead!)
+    // for dev mode only
+    strict: process.env.DEV
+  })
 
-	return Store;
+  return Store
 }

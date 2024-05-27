@@ -46,34 +46,36 @@
 </template>
 
 <script>
-import partners from "src/assets/partners";
-import PartnerCard from "src/components/PartnerCard";
+import PartnerCard from 'src/components/PartnerCard'
+import partners from 'src/assets/partners'
 
 export default {
-	name: "Partners",
-	components: {
-		PartnerCard,
-	},
-	data() {
-		return {
-			partners: partners,
-		};
-	},
-	computed: {
-		toc: {
-			get() {
-				return this.$store.state.common.toc;
-			},
-			set(toc) {
-				this.$store.commit("common/toc", toc);
-			},
-		},
-	},
+  name: 'Partners',
+  components: {
+    PartnerCard
+  },
+  data () {
+    return {
+      partners: partners
+    }
+  },
+  computed: {
+    toc:
+    {
+      get () {
+        return this.$store.state.common.toc
+      },
+      set (toc) {
+        this.$store.commit('common/toc', toc)
+      }
+    }
+  },
 
-	methods: {
-		onToc(toc) {
-			this.toc = toc;
-		},
-	},
-};
+  methods: {
+    onToc (toc) {
+      this.toc = toc
+    }
+  }
+
+}
 </script>

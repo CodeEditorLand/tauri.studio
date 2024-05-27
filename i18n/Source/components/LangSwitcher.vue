@@ -56,82 +56,69 @@
 </template>
 
 <script>
-import * as locales from "../i18n/localesObj.json";
+  import * as locales from '../i18n/localesObj.json'
 
-export default {
-	name: "LangSwitcher",
-	props: {
-		lang: {
-			type: String,
-			default: "en",
-		},
-		longStyle: {
-			type: Boolean,
-			default: false,
-		},
-	},
-	data() {
-		return {
-			locales: locales.default,
-			tempLocale: "",
-		};
-	},
-	computed: {
-		routeLocale() {
-			return this.$route.params.locale;
-		},
-		locale: {
-			get: async function () {
-				const val =
-					(await this.$forage.getKeyValue({
-						key: "user",
-						value: "locale",
-					})()) ||
-					this.$route.params.locale ||
-					"en";
-				return val;
-			},
-			set(val) {
-				return val;
-			},
-		},
-	},
-	mounted() {
-		this.$nextTick(async () => {
-			const userLocale = await this.$forage.getKeyValue({
-				key: "user",
-				value: "locale",
-			})();
-			this.locales.forEach((obj) => {
-				if (obj.lang === userLocale) {
-					this.tempLocale = obj;
-				}
-			});
-		});
-	},
-	methods: {
-		reroute(val) {
-			let hostName = window.location.hostname;
-			hostName = hostName.substring(
-				hostName.lastIndexOf(".", hostName.lastIndexOf(".") - 1) + 1,
-			);
-			let route = document.location.pathname.split("/");
-			route[1] = val;
-			route = route.join("/");
-			if (location.search) route = route + location.search;
-			return route;
-		},
-		changeLang: async function (val) {
-			if (val === this.$route.params.locale) {
-				return;
-			}
-			const route = this.reroute(val);
-			this.$forage.mergeItem({ key: "user", value: { locale: val } })();
-			// mutate if we have an ID
-			if (await this.$meGet("id")) {
-				this.$apollo
-					.mutate({
-						mutation: gql`
+  export default {
+    name: 'LangSwitcher',
+    props: {
+      lang: {
+        type: String,
+        default: 'en'
+      },
+      longStyle: {
+        type: Boolean,
+        default: false
+      }
+    },
+    data () {
+      return {
+        locales: locales.default,
+        tempLocale: ''
+      }
+    },
+    computed: {
+      routeLocale () {
+        return this.$route.params.locale
+      },
+      locale: {
+        get: async function () {
+          const val = await this.$forage.getKeyValue({ key: 'user', value: 'locale' })() || this.$route.params.locale || 'en'
+          return val
+        },
+        set (val) {
+          return val
+        }
+      }
+    },
+    mounted () {
+      this.$nextTick(async () => {
+        const userLocale = await this.$forage.getKeyValue({ key: 'user', value: 'locale' })()
+        this.locales.forEach(obj => {
+          if (obj.lang === userLocale) {
+            this.tempLocale = obj
+          }
+        })
+      })
+    },
+    methods: {
+      reroute (val) {
+        let hostName = window.location.hostname
+        hostName = hostName.substring(hostName.lastIndexOf('.', hostName.lastIndexOf('.') - 1) + 1)
+        let route = document.location.pathname.split('/')
+        route[1] = val
+        route = route.join('/')
+        if (location.search) route = route + location.search
+        return route
+      },
+      changeLang: async function (val) {
+        if (val === this.$route.params.locale) { return }
+        const route = this.reroute(val)
+        this.$forage.mergeItem({ key: 'user', value: { locale: val } })()
+        // mutate if we have an ID
+        if (await this.$meGet('id')) {
+          this.$apollo
+            .mutate({
+              mutation: gql`
             mutation updateUser(
               $change: String!
             ) {
@@ -141,14 +128,14 @@ export default {
                 locale
               }
             }`,
-						variables: {
-							change: val,
-						},
-					})
-					.catch(() => {});
-			}
-			await this.$router.push(route);
-		},
-	},
-};
+              variables: {
+                change: val
+              }
+            })
+            .catch(() => {})
+        }
+        await this.$router.push(route)
+      }
+    }
+  }
 </script>

@@ -66,58 +66,58 @@
 </template>
 
 <script>
-import { copyHeading, slugify } from "assets/page-utils";
+import { copyHeading, slugify } from 'assets/page-utils'
 
 export default {
-	name: "ExampleCard",
+  name: 'ExampleCard',
 
-	components: {
-		TauriBasic: () => import("../examples/TauriBasic"),
-		TauriAdvanced: () => import("../examples/TauriAdvanced"),
-	},
+  components: {
+    TauriBasic: () => import('../examples/TauriBasic'),
+    TauriAdvanced: () => import('../examples/TauriAdvanced')
+  },
 
-	props: {
-		title: {
-			type: String,
-			required: true,
-		},
-		name: {
-			type: String,
-			required: true,
-		},
-		tagParts: {
-			type: Object,
-			default: () => {},
-		},
-	},
+  props: {
+    title: {
+      type: String,
+      required: true
+    },
+    name: {
+      type: String,
+      required: true
+    },
+    tagParts: {
+      type: Object,
+      default: () => {}
+    }
+  },
 
-	data() {
-		return {
-			tab: "template",
-			parts: {},
-		};
-	},
+  data () {
+    return {
+      tab: 'template',
+      parts: {}
+    }
+  },
 
-	mounted() {
-		this.updateParts();
-	},
+  mounted () {
+    this.updateParts()
+  },
 
-	computed: {
-		slugifiedTitle() {
-			return slugify(this.title);
-		},
-	},
+  computed: {
+    slugifiedTitle () {
+      return slugify(this.title)
+    }
+  },
 
-	methods: {
-		copyHeading,
-		updateParts() {
-			this.parts = {};
-			Object.keys(this.tagParts).forEach((key) => {
-				if (this.tagParts[key] !== "") {
-					this.parts[key] = "```\n" + this.tagParts[key] + "\n```";
-				}
-			});
-		},
-	},
-};
+  methods: {
+    copyHeading,
+    updateParts () {
+      this.parts = {}
+      Object.keys(this.tagParts).forEach(key => {
+        if (this.tagParts[key] !== '') {
+          this.parts[key] = '```\n' + this.tagParts[key] + '\n```'
+        }
+      })
+    }
+  }
+}
 </script>

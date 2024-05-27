@@ -28,14 +28,14 @@
 </template>
 <script>
 export default {
-	name: "SponsorCard",
-	props: {
-		title: String,
-		tags: Array,
-		url: String,
-		logoUrl: String,
-		description: String,
-		flair: String,
-	},
-};
+  name: 'SponsorCard',
+  props: {
+    title: String,
+    tags: Array,
+    url: String,
+    logoUrl: String,
+    description: String,
+    flair: String
+  }
+}
 </script>

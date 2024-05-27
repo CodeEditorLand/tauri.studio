@@ -125,59 +125,41 @@
 <script>
 /* eslint quotes: 0 */
 
-import { scroll } from "quasar";
-import { mapGetters } from "vuex";
-const { getScrollTarget, setScrollPosition } = scroll;
-import { makeUrl, slugify } from "assets/page-utils";
-import UpScroller from "src/components/UpScroller";
-import Hero from "../components/Hero";
+import { mapGetters } from 'vuex'
+import { scroll } from 'quasar'
+const { getScrollTarget, setScrollPosition } = scroll
+import { slugify, makeUrl } from 'assets/page-utils'
+import Hero from '../components/Hero'
+import UpScroller from 'src/components/UpScroller'
 
 export default {
-	name: "MainLayout",
-	components: {
-		Hero: Hero,
-		UpScroller: UpScroller,
-	},
-	data() {
-		return {
-			activeToc: 0,
-		};
-	},
-	meta() {
-		return {
-			title: this.metaRoute.page_title,
-			meta: {
-				ogUrl: {
-					name: "og:url",
-					content: `https://tauri.studio/en/${this.$route.name}`,
-				},
-				ogTitle: {
-					name: "og:title",
-					content: this.metaRoute.page_title,
-				},
-				twitterTitle: {
-					name: "twitter:title",
-					content: this.metaRoute.page_title,
-				},
-				ogSiteName: { name: "og:site_name", content: "Tauri Studio" },
-				desc: {
-					name: "description",
-					content: this.metaRoute.description,
-				},
-				ogDesc: {
-					name: "og:description",
-					content: this.metaRoute.description,
-				},
-				twitterDesc: {
-					name: "twitter:description",
-					content: this.metaRoute.description,
-				},
-				keywords: { name: "keywords", content: this.metaRoute.tags },
-			},
-			script: {
-				ldJson: {
-					type: "application/ld+json",
-					innerHTML: `
+  name: 'MainLayout',
+  components: {
+    Hero: Hero,
+    UpScroller: UpScroller
+  },
+  data () {
+    return {
+      activeToc: 0
+    }
+  },
+  meta () {
+    return {
+      title: this.metaRoute.page_title,
+      meta: {
+        ogUrl: { name: 'og:url', content: `https://tauri.studio/en/${this.$route.name}` },
+        ogTitle: { name: 'og:title', content: this.metaRoute.page_title },
+        twitterTitle: { name: 'twitter:title', content: this.metaRoute.page_title },
+        ogSiteName: { name: 'og:site_name', content: 'Tauri Studio' },
+        desc: { name: 'description', content: this.metaRoute.description },
+        ogDesc: { name: 'og:description', content: this.metaRoute.description },
+        twitterDesc: { name: 'twitter:description', content: this.metaRoute.description },
+        keywords: { name: 'keywords', content: this.metaRoute.tags }
+      },
+      script: {
+        ldJson: {
+          type: 'application/ld+json',
+          innerHTML: `
 {
   "@context": "http://schema.org",
   "@type": "Article",
@@ -195,72 +177,69 @@ export default {
   ],
   "description": "${this.metaRoute.description}",
   "keywords": "${this.metaRoute.tags}"
-}`,
-				},
-			},
-			noscript: {
-				default: `Welcome to tauri.studio: ${this.metaRoute.page_title} This website requires JavaScript - and here you would have learned about the following: ${this.metaRoute.description}`,
-			},
-		};
-	},
-	computed: {
-		metaRoute() {
-			return this.$route.meta;
-		},
-		...mapGetters({
-			toc: "common/toc",
-		}),
-		rightDrawerOpen: {
-			get() {
-				return this.$store.state.common.rightDrawerOpen;
-			},
-			set(rightDrawerOpen) {
-				// console.log('toc:', toc)
-				this.$store.commit("common/rightDrawerOpen", rightDrawerOpen);
-			},
-		},
-		contentStyle() {
-			return {
-				background: this.$q.dark.isActive ? "" : "#FDFADE",
-				paddingTop: "70px",
-			};
-		},
-	},
+}`
+        }
+      },
+      noscript: {
+        default: `Welcome to tauri.studio: ${this.metaRoute.page_title} This website requires JavaScript - and here you would have learned about the following: ${this.metaRoute.description}`
+      }
+    }
+  },
+  computed: {
+    metaRoute () {
+      return this.$route.meta
+    },
+    ...mapGetters({
+      toc: 'common/toc'
+    }),
+    rightDrawerOpen: {
+      get () {
+        return this.$store.state.common.rightDrawerOpen
+      },
+      set (rightDrawerOpen) {
+        // console.log('toc:', toc)
+        this.$store.commit('common/rightDrawerOpen', rightDrawerOpen)
+      }
+    },
+    contentStyle () {
+      return {
+        background: this.$q.dark.isActive ? '' : '#FDFADE',
+        paddingTop: '70px'
+      }
+    }
+  },
 
-	mounted() {
-		// todo: fade the landing logo out instead of this brutal hack
-		document
-			.getElementById("tauri-studio-logo")
-			.setAttribute("style", "display:none");
-		// code to handle anchor link on refresh/new page, etc
-		if (location.hash !== "") {
-			const id = location.hash.substring(1, location.hash.length);
-			this.scrollTo(id);
-		}
-	},
+  mounted () {
+    // todo: fade the landing logo out instead of this brutal hack
+    document.getElementById('tauri-studio-logo').setAttribute('style', 'display:none')
+    // code to handle anchor link on refresh/new page, etc
+    if (location.hash !== '') {
+      const id = location.hash.substring(1, location.hash.length)
+      this.scrollTo(id)
+    }
+  },
 
-	methods: {
-		scrollTo(id) {
-			this.$refs.drawer.hide();
-			this.activeToc = id;
-			const el = document.getElementById(id);
-			if (el) {
-				setTimeout(() => {
-					this.scrollPage(el);
-					makeUrl(slugify(id));
-				}, 200);
-			}
-		},
-		scrollPage(el) {
-			const target = getScrollTarget(el);
-			const current =
-				window.pageYOffset || document.documentElement.scrollTop;
-			let offset = el.offsetTop - 80;
-			if (current <= 50) offset = el.offsetTop - 250;
-			setScrollPosition(target, offset, 500);
-		},
-	},
-};
+  methods: {
+    scrollTo (id) {
+      this.$refs.drawer.hide()
+      this.activeToc = id
+      const el = document.getElementById(id)
+      if (el) {
+        setTimeout(() => {
+          this.scrollPage(el)
+          makeUrl(slugify(id))
+        }, 200)
+      }
+    },
+    scrollPage (el) {
+      const target = getScrollTarget(el)
+      const current = window.pageYOffset || document.documentElement.scrollTop
+      let offset = el.offsetTop - 80
+      if (current <= 50) offset = el.offsetTop - 250
+      setScrollPosition(target, offset, 500)
+    }
+  }
+}
 </script>
 
 <style lang="stylus">
