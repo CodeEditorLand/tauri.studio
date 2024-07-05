@@ -10,7 +10,7 @@
 		"compression": "^1.7.4",
 		"lru-cache": "10.3.0",
 		"mermaid": "10.9.1",
-		"quasar": "2.16.4"
+		"quasar": "2.16.5"
 	},
 	"quasar": {
 		"ssr": true
