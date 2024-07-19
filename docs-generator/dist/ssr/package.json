@@ -5,12 +5,12 @@
 		"start": "node index.js"
 	},
 	"dependencies": {
-		"@quasar/babel-preset-app": "1.1.7",
-		"@quasar/extras": "1.4.1",
-		"compression": "^1.0.0",
-		"lru-cache": "5.1.1",
-		"mermaid": "8.4.4",
-		"quasar": "1.7.2"
+		"@quasar/babel-preset-app": "2.0.3",
+		"@quasar/extras": "1.16.12",
+		"compression": "^1.7.4",
+		"lru-cache": "11.0.0",
+		"mermaid": "10.9.1",
+		"quasar": "2.16.6"
 	},
 	"quasar": {
 		"ssr": true
