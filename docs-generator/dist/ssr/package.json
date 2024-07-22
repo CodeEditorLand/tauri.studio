@@ -1,4 +1,9 @@
 {
+	"name": "docs-generator",
+	"description": "Tauri Documentation",
+	"scripts": {
+		"start": "node index.js"
+	},
 	"dependencies": {
 		"@quasar/babel-preset-app": "2.0.3",
 		"@quasar/extras": "1.16.12",
@@ -7,12 +12,7 @@
 		"mermaid": "11.0.0-alpha.7",
 		"quasar": "2.16.6"
 	},
-	"description": "Tauri Documentation",
-	"name": "docs-generator",
 	"quasar": {
 		"ssr": true
-	},
-	"scripts": {
-		"start": "node index.js"
 	}
 }
