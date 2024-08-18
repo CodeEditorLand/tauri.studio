@@ -6,7 +6,7 @@
 		"@quasar/extras": "1.16.12",
 		"lru-cache": "11.0.0",
 		"mermaid": "11.0.0-alpha.7",
-		"quasar": "2.16.6"
+		"quasar": "2.16.9"
 	},
 	"description": "Tauri Documentation",
 	"devDependencies": {
