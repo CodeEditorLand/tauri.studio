@@ -4,8 +4,8 @@
 		"@quasar/extras": "1.16.12",
 		"compression": "^1.7.4",
 		"lru-cache": "11.0.0",
-		"mermaid": "11.0.2",
-		"quasar": "2.16.9"
+		"mermaid": "11.1.0",
+		"quasar": "2.16.10"
 	},
 	"description": "Tauri Documentation",
 	"name": "docs-generator",
