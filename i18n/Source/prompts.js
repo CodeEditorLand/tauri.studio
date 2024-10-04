@@ -40,5 +40,5 @@
  */
 
 module.exports = function () {
-  return []
-}
+	return [];
+};
