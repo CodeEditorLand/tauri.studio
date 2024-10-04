@@ -11,13 +11,13 @@
  * See https://goo.gl/2aRDsh
  */
 
-importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
-
 importScripts(
-  "/precache-manifest.0c03a3844d82e918ae3b6c11866fcd20.js"
+	"https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js",
 );
 
-workbox.core.setCacheNameDetails({prefix: "docs-generator"});
+importScripts("/precache-manifest.0c03a3844d82e918ae3b6c11866fcd20.js");
+
+workbox.core.setCacheNameDetails({ prefix: "docs-generator" });
 
 workbox.core.skipWaiting();
 
@@ -30,8 +30,16 @@ workbox.core.clientsClaim();
  */
 self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {
-  "directoryIndex": "/"
+	"directoryIndex": "/",
 });
 
-workbox.routing.registerRoute("/", new workbox.strategies.NetworkFirst(), 'GET');
-workbox.routing.registerRoute("/statics/*", new workbox.strategies.CacheFirst(), 'GET');
+workbox.routing.registerRoute(
+	"/",
+	new workbox.strategies.NetworkFirst(),
+	"GET",
+);
+workbox.routing.registerRoute(
+	"/statics/*",
+	new workbox.strategies.CacheFirst(),
+	"GET",
+);
