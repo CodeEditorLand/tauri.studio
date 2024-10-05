@@ -1,19 +1,32 @@
-The Tauri API is a set of opt-in tools that you can enable in order to do things like read and write from the filesystem and pass messages back and forth between the WebView and Rust. There are two parts to it, the Rust API and the JS API. The former is consumed in your `src-tauri/src/main.rs` file, and the latter is available at the `window.tauri` object.
+The Tauri API is a set of opt-in tools that you can enable in order to do things
+like read and write from the filesystem and pass messages back and forth between
+the WebView and Rust. There are two parts to it, the Rust API and the JS API.
+The former is consumed in your `src-tauri/src/main.rs` file, and the latter is
+available at the `window.tauri` object.
 
 ## Installation
-If you want to use the API, you will need to first choose how to integrate it into your UI. There are two suggested methods:
+
+If you want to use the API, you will need to first choose how to integrate it
+into your UI. There are two suggested methods:
+
 1. Use the webpack plugin (better)
 2. Inject the official helper (easier)
 
 ### Webpack Plugin
-Webpack will take care of everything for you, so after you have this done right, you can use `window.tauri` wherever you need to.
+
+Webpack will take care of everything for you, so after you have this done right,
+you can use `window.tauri` wherever you need to.
+
 #### Installation
+
 ```bash
 yarn add @tauri-apps/tauri-webpack
 ```
 
 #### Integration
+
 In your webpack config, add the following:
+
 ```js
 chainWebpack (chain) {
   require('@tauri-apps/tauri-webpack').chain(chain, {
@@ -23,12 +36,14 @@ chainWebpack (chain) {
 ```
 
 ### Official Helper
+
 The official helper waits for
 
-
-They are configured in the `src-tauri/tauri.conf.json` file with the following object:
+They are configured in the `src-tauri/tauri.conf.json` file with the following
+object:
 
 ## Whitelist
+
 ```
 whitelist: {              // all whitelist values are default:false
   all: false,             // use this flag to enable all API features
@@ -44,7 +59,11 @@ whitelist: {              // all whitelist values are default:false
 },
 ```
 
-These features will be added to your project's `src-taurl/Cargo.toml` at build time (regardless of whether you are bundling or dev'ing). The API functions that you are not using will be stubbed by tree-flattening (the body of the function will merely reject() instead of throwing), so that there are no orphan functions still available in the JS bundle. This reduces the vulnerability footprint.
+These features will be added to your project's `src-taurl/Cargo.toml` at build
+time (regardless of whether you are bundling or dev'ing). The API functions that
+you are not using will be stubbed by tree-flattening (the body of the function
+will merely reject() instead of throwing), so that there are no orphan functions
+still available in the JS bundle. This reduces the vulnerability footprint.
 
 ```
 /**
@@ -154,45 +173,63 @@ These features will be added to your project's `src-taurl/Cargo.toml` at build t
 
 ```
 
-
 ## Custom commands
 
-Rig your command in `src-tauri/src/cmd.rs` and define it in `src-tauri/src/main.rs`
+Rig your command in `src-tauri/src/cmd.rs` and define it in
+`src-tauri/src/main.rs`
 
 ### Rust
-If your command is defined in rust as `MyCustomCommand`, you must use `myCustomCommand` in JS.
+
+If your command is defined in rust as `MyCustomCommand`, you must use
+`myCustomCommand` in JS.
 
 ### ES
+
 ```js
-tauri.invoke({ cmd: 'myCustomCommand', argument: 'thing' })
+tauri.invoke({ cmd: "myCustomCommand", argument: "thing" });
 ```
-Calling this will write the word 'thing' in the Rust console in a Vanilla Tauri app.
+
+Calling this will write the word 'thing' in the Rust console in a Vanilla Tauri
+app.
 
 ## Promise response
+
 ```js
-const response = await tauri.promisified({ cmd: 'myCustomCommand', argument: 'thing' })
+const response = await tauri.promisified({
+	cmd: "myCustomCommand",
+	argument: "thing",
+});
 ```
 
-
 ## Response listener
-If you expect an event, but don't know when, you can add an event listener. This way, when Rust finishes working it merely needs to emit the handle being expected and then your code can react to that.
+
+If you expect an event, but don't know when, you can add an event listener. This
+way, when Rust finishes working it merely needs to emit the handle being
+expected and then your code can react to that.
 
 ```js
 // Keep listening
-tauri.addEventListener('key-generated', res => {
-  console.table(res.payload.publicKey)
-})
+tauri.addEventListener("key-generated", (res) => {
+	console.table(res.payload.publicKey);
+});
 ```
 
 ```js
 // Just listen for one event only.
-tauri.addEventListener('key-generated', res => {
-  console.table(res.payload.publicKey)
-}, true)
+tauri.addEventListener(
+	"key-generated",
+	(res) => {
+		console.table(res.payload.publicKey);
+	},
+	true,
+);
 ```
 
 ## Event
-Here is a `src-tauri/main.rs` file that uses the Event API to rig Rust to listen for an event named `hello`, it then puts that in a `Reply` struct and passes the stringified struct back the WebView as a JSON object as an event `reply`.
+
+Here is a `src-tauri/main.rs` file that uses the Event API to rig Rust to listen
+for an event named `hello`, it then puts that in a `Reply` struct and passes the
+stringified struct back the WebView as a JSON object as an event `reply`.
 
 ```rust
 // rustlang
@@ -229,6 +266,7 @@ fn main() {
 ```
 
 On the WebView side, your code can look like this:
+
 ```js
 eventToRust () {
   tauri.emit('hello', this.entry)
@@ -241,18 +279,18 @@ tauri.addEventListener('reply', res => {
 })
 ```
 
-But as long as `event: true` is set in `src-tauri/tauri.conf.json > tauri > whitelist`, you can always emit from any part of your code. Here are a few more examples of things you can do:
+But as long as `event: true` is set in
+`src-tauri/tauri.conf.json > tauri > whitelist`, you can always emit from any
+part of your code. Here are a few more examples of things you can do:
+
 ```rust
 tauri::event::emit(handle, "reply",  serde_json::to_string(&reply).unwrap());
 tauri::event::emit(handle, "reply", "{'msg': 'changed by rust emit'}".to_string());
 tauri::event::emit(handle, "reply", "eval(alert('you really should know better'))".to_string());
 ```
 
-::: warning
-Because of the way that this injection works, events can be very difficult to trace and may fail silently.
-:::
-
-
+::: warning Because of the way that this injection works, events can be very
+difficult to trace and may fail silently. :::
 
     build: {
       distDir: distDir, (string required)
@@ -295,4 +333,5 @@ Because of the way that this injection works, events can be very difficult to tr
         active: true
       }
     }
-  }
+
+}

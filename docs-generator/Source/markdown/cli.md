@@ -1,11 +1,14 @@
 # Introduction
+
 The main Tauri CLI is a NodeJS program that has a number of subcommands:
-- [init](/docs/cli#init)
-- [dev](/docs/cli#dev)
-- [build](/docs/cli#build)
-- [icon](/docs/cli#icon)
+
+-   [init](/docs/cli#init)
+-   [dev](/docs/cli#dev)
+-   [build](/docs/cli#build)
+-   [icon](/docs/cli#icon)
 
 ## init
+
 ```
   Description
     Inits the Tauri template. If Tauri cannot find the src-tauri/tauri.conf.json
@@ -21,6 +24,7 @@ The main Tauri CLI is a NodeJS program that has a number of subcommands:
 ```
 
 ## dev
+
 ```
   Description
     Tauri dev.
@@ -29,10 +33,11 @@ The main Tauri CLI is a NodeJS program that has a number of subcommands:
   Options
     --help, -h     Displays this message
 ```
+
 This command is rigged via your `src-tauri/tauri.conf.json`.
 
-
 ## build
+
 ```
   Description
     Tauri build.
@@ -41,9 +46,11 @@ This command is rigged via your `src-tauri/tauri.conf.json`.
   Options
     --help, -h     Displays this message
 ```
+
 This command is rigged via your `src-tauri/tauri.conf.json`.
 
 ## icon
+
 ```
   Description
     Create all the icons you need for your Tauri app.
