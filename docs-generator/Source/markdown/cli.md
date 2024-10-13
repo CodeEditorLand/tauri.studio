@@ -2,10 +2,10 @@
 
 The main Tauri CLI is a NodeJS program that has a number of subcommands:
 
--   [init](/docs/cli#init)
--   [dev](/docs/cli#dev)
--   [build](/docs/cli#build)
--   [icon](/docs/cli#icon)
+-   [`init`](/docs/cli#init)
+-   [`dev`](/docs/cli#dev)
+-   [`build`](/docs/cli#build)
+-   [`icon`](/docs/cli#icon)
 
 ## init
 

@@ -27,5 +27,5 @@ have a working legacy (or not so legacy) system that just doesn't warrant a
 completely new architecting - so you shouldn't have to retool in order to
 
 ::: tip This means that legacy systems can be relatively trivially given a
-[brownfield development](<https://en.wikipedia.org/wiki/Brownfield_(software_development)>)
+[`brownfield development`](<https://en.wikipedia.org/wiki/Brownfield_(software_development)>)
 treatment. :star: :::

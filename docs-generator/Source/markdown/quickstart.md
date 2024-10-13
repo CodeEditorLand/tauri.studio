@@ -19,16 +19,16 @@ After tauri has compiled its rust resources, look in the
 
 ### Windows 64 or 32 bit
 
-First you should [download](https://aka.ms/buildtools) and install Visual Studio
+First you should [`download`](https://aka.ms/buildtools) and install Visual Studio
 MSBuild Tools and C++ build tools.
 
 > This is a big download (over 1GB) and takes the most time, so go grab a
 > :coffee:
 
 Chocolatey is a great package manager for Windows. Follow these
-[these official instructions](https://chocolatey.org/install), or just do this:
+[`these official instructions`](https://chocolatey.org/install), or just do this:
 
-Then install [nvm-windows](https://github.com/coreybutler/nvm-windows) Then
+Then install [`nvm-windows`](https://github.com/coreybutler/nvm-windows) Then
 install Chocolatey
 
 ```powershell
@@ -40,11 +40,11 @@ choco install yarn
 ```
 
 If you are running Windows 64-bit, download and run
-[rustup‑init.exe](https://win.rustup.rs/x86_64) and then follow the onscreen
+[`rustup‑init.exe`](https://win.rustup.rs/x86_64) and then follow the onscreen
 instructions.
 
 If you are running Windows 32-bit, download and run
-[rustup‑init.exe](https://win.rustup.rs/i686) and then follow the onscreen
+[`rustup‑init.exe`](https://win.rustup.rs/i686) and then follow the onscreen
 instructions.
 
 #### Enable loopback
@@ -94,7 +94,7 @@ First install Ubuntu then:
 > We have audited this bash script, and it does what it says it is supposed to
 > do. Nevertheless, before blindly curl-bashing a script, it is always wise to
 > look at it first. Here is the file as a mere
-> [download link](https://sh.rustup.rs)
+> [`download link`](https://sh.rustup.rs)
 
 Make sure that `rustc` and `cargo` are in your $PATH. Run
 
@@ -109,7 +109,7 @@ otherwise be sure to update.
 
 ## About rustup
 
--   (from their [website](https://rustup.rs))
+-   (from their [`website`](https://rustup.rs))
 
 `rustup` installs rustc, cargo, rustup and other standard tools to Cargo's bin
 directory. On Unix it is located at `$HOME/.cargo/bin` and on Windows at

@@ -6,11 +6,11 @@
 
 | Component                                                             | Language | Version                                                         |
 | --------------------------------------------------------------------- | -------- | --------------------------------------------------------------- |
-| [tauri.js](https://github.com/tauri-apps/tauri/tree/dev/cli/tauri.js) | node     | ![](https://img.shields.io/npm/v/tauri.svg)                     |
-| [tauri](https://github.com/tauri-apps/tauri/tree/dev/tauri)           | rust     | ![](https://img.shields.io/crates/v/tauri.svg)                  |
-| [builder](https://github.com/tauri-apps/tauri/tree/dev/cli/tauri-cli) | rust     | ![](https://img.shields.io/crates/v/tauri-cli.svg)              |
-| [vue-plugin](https://github.com/tauri-apps/vue-cli-plugin-tauri)      | vue      | ![](https://img.shields.io/npm/v/vue-cli-plugin-tauri.svg)      |
-| [webpack](https://github.com/tauri-apps/tauri-webpack)                | webpack  | ![](https://img.shields.io/npm/v/@tauri-apps/tauri-webpack.svg) |
+| [`tauri.js](https://github.com/tauri-apps/tauri/tree/dev/cli/tauri.js) | node     | ![`](https://img.shields.io/npm/v/tauri.svg)                     |
+| [`tauri](https://github.com/tauri-apps/tauri/tree/dev/tauri)           | rust     | ![`](https://img.shields.io/crates/v/tauri.svg)                  |
+| [`builder](https://github.com/tauri-apps/tauri/tree/dev/cli/tauri-cli) | rust     | ![`](https://img.shields.io/crates/v/tauri-cli.svg)              |
+| [`vue-plugin](https://github.com/tauri-apps/vue-cli-plugin-tauri)      | vue      | ![`](https://img.shields.io/npm/v/vue-cli-plugin-tauri.svg)      |
+| [`webpack](https://github.com/tauri-apps/tauri-webpack)                | webpack  | ![`](https://img.shields.io/npm/v/@tauri-apps/tauri-webpack.svg) |
 
 ### Debugging
 
