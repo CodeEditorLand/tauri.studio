@@ -246,7 +246,6 @@ and is subject to its terms and conditions:
 /*! ./parser/classDiagram */
 
   !*** ./src/diagrams/class/parser/classDiagram.jison ***!
-  \******************************************************/
 
 /*! fs */
 
