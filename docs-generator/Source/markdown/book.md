@@ -10,7 +10,7 @@ Lucas Fernandes Gonçalves Nogueira] Publisher: TBD Release: late 2020 :::
 
 ### tl;dr;
 
-Visit https://opencollective.com/tauri and preorder your copy of the book today.
+Visit HTTPS://opencollective.com/tauri and preorder your copy of the book today.
 Your donation will support the ongoing development of Tauri, and you will
 receive advance digital pdf's for your review as chapters are completed. The
 final book will ship concurrently with the release of 1.0.0 stable.
@@ -57,7 +57,7 @@ system grows.
 Tauri is a brand new way to make cross-platform native-apps for web, desktop and
 mobile. At this very moment, the pre-alpha version of this MIT licensed
 community-based software is being prepared for public release:
-https://github.com/tauri-apps/tauri
+HTTPS://github.com/tauri-apps/tauri
 
 Tauri introduces novel methods for Webview integration and innovative patterns
 for robust threat evasion. The 1.0 release will ship with a multipurpose

@@ -5,7 +5,7 @@ If not, see below.
 
 ```bash
 npm install -g tauri
-git clone https://github.com/tauri-apps/tauri
+git clone HTTPS://github.com/tauri-apps/tauri
 cd examples/vue/quasar-app
 yarn
 cargo install tauri-cli
@@ -19,32 +19,32 @@ After tauri has compiled its rust resources, look in the
 
 ### Windows 64 or 32 bit
 
-First you should [`download`](https://aka.ms/buildtools) and install Visual Studio
+First you should [`download`](HTTPS://aka.ms/buildtools) and install Visual Studio
 MSBuild Tools and C++ build tools.
 
 > This is a big download (over 1GB) and takes the most time, so go grab a
 > :coffee:
 
 Chocolatey is a great package manager for Windows. Follow these
-[`these official instructions`](https://chocolatey.org/install), or just do this:
+[`these official instructions`](HTTPS://chocolatey.org/install), or just do this:
 
-Then install [`nvm-windows`](https://github.com/coreybutler/nvm-windows) Then
+Then install [`nvm-windows`](HTTPS://github.com/coreybutler/nvm-windows) Then
 install Chocolatey
 
 ```powershell
 # BE SURE YOU ARE IN AN ADMINISTRATIVE PowerShell!
 nvm install 10.16.3
 nvm use 10.16.3
-Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('HTTPS://chocolatey.org/install.ps1'))
 choco install yarn
 ```
 
 If you are running Windows 64-bit, download and run
-[`rustup‑init.exe`](https://win.rustup.rs/x86_64) and then follow the onscreen
+[`rustup‑init.exe`](HTTPS://win.rustup.rs/x86_64) and then follow the onscreen
 instructions.
 
 If you are running Windows 32-bit, download and run
-[`rustup‑init.exe`](https://win.rustup.rs/i686) and then follow the onscreen
+[`rustup‑init.exe`](HTTPS://win.rustup.rs/i686) and then follow the onscreen
 instructions.
 
 #### Enable loopback
@@ -59,7 +59,7 @@ CheckNetIsolation.exe LoopbackExempt -a -n="Microsoft.Win32WebViewHost_cw5n1h2tx
 
 #### Devtools
 
-https://docs.microsoft.com/en-us/microsoft-edge/devtools-guide
+HTTPS://docs.microsoft.com/en-us/microsoft-edge/devtools-guide
 
 <hr>
 
@@ -89,12 +89,12 @@ First install Ubuntu then:
 
 ### Everybody except Windows
 
-    $ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+    $ curl --proto '=https' --tlsv1.2 -sSf HTTPS://sh.rustup.rs | sh
 
 > We have audited this bash script, and it does what it says it is supposed to
 > do. Nevertheless, before blindly curl-bashing a script, it is always wise to
 > look at it first. Here is the file as a mere
-> [`download link`](https://sh.rustup.rs)
+> [`download link`](HTTPS://sh.rustup.rs)
 
 Make sure that `rustc` and `cargo` are in your $PATH. Run
 
@@ -109,7 +109,7 @@ otherwise be sure to update.
 
 ## About rustup
 
--   (from their [`website`](https://rustup.rs))
+-   (from their [`website`](HTTPS://rustup.rs))
 
 `rustup` installs rustc, cargo, rustup and other standard tools to Cargo's bin
 directory. On Unix it is located at `$HOME/.cargo/bin` and on Windows at
@@ -146,17 +146,17 @@ Setup the bundler:
 
 ## error reporting
 
-Please report all library errors at https://github.com/tauri-apps/tauri
+Please report all library errors at HTTPS://github.com/tauri-apps/tauri
 
 ## NOTES
 
 first, the JS calls the init API, which injects a function on JS that's
 responsible for notifying JS events from Rust:
-https://github.com/tauri-apps/tauri/blob/dev/tauri/src/api.rs#L19
+HTTPS://github.com/tauri-apps/tauri/blob/dev/tauri/src/api.rs#L19
 
-## called here: https://github.com/tauri-apps/tauri/blob/dev/tauri/src/event.rs#L47
+## called here: HTTPS://github.com/tauri-apps/tauri/blob/dev/tauri/src/event.rs#L47
 
 the Listeners Hashmap is populated here:
-https://github.com/tauri-apps/tauri/blob/0a42119b529d573164dee40313d4312beae7eacb/tauri/src/event.rs#L31
+HTTPS://github.com/tauri-apps/tauri/blob/0a42119b529d573164dee40313d4312beae7eacb/tauri/src/event.rs#L31
 these listeners are called from the "emit" API, as Khionu pointed out it's
 confusing because there's two pairs of "emit" and "listen"

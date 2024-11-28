@@ -294,7 +294,7 @@ difficult to trace and may fail silently. :::
 
     build: {
       distDir: distDir, (string required)
-      devPath: 'http://localhost:7334' // devServer URL or path to folder where index.html is found
+      devPath: 'HTTP://localhost:7334' // devServer URL or path to folder where index.html is found
     },
     ctx: {
       prod: false,          // readonly

@@ -27,20 +27,20 @@ convenes privately, all other working groups are public and open to any and all
 participants.
 
 Please visit
-[`this repository`](https://github.com/tauri-apps/governance-and-guidance) to get
+[`this repository`](HTTPS://github.com/tauri-apps/governance-and-guidance) to get
 more information.
 
 ### Code of Conduct
 
 Everyone participating in the Tauri commnunity is expected to follow a code of
 conduct that you can at the
-[`Governance and Guidance:Code of Conduct`](https://github.com/tauri-apps/governance-and-guidance/blob/master/CODE_OF_CONDUCT.md).
+[`Governance and Guidance:Code of Conduct`](HTTPS://github.com/tauri-apps/governance-and-guidance/blob/master/CODE_OF_CONDUCT.md).
 
 ### Social Contract
 
 We have a Social Contract that informs our decision making and organization. You
 can read about it here:
-[`Governance and Guidance:Social Contract`](https://github.com/tauri-apps/governance-and-guidance/blob/master/SOCIAL_CONTRACT.md).
+[`Governance and Guidance:Social Contract`](HTTPS://github.com/tauri-apps/governance-and-guidance/blob/master/SOCIAL_CONTRACT.md).
 
 ### Licensing
 
