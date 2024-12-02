@@ -3,9 +3,9 @@
 		"last 1 version, not dead, ie >= 11"
 	],
 	"dependencies": {
-		"@quasar/extras": "1.16.13",
+		"@quasar/extras": "1.16.14",
 		"lru-cache": "11.0.2",
-		"mermaid": "11.4.0",
+		"mermaid": "11.4.1",
 		"quasar": "2.17.4"
 	},
 	"description": "Tauri Documentation",
