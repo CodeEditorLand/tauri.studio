@@ -3,6 +3,6 @@
 	"description": "common i18n locales and tools",
 	"devDependencies": {},
 	"main": "src/index.js",
-	"name": "@tauri-apps/quasar-app-extension-studio-i18n",
+	"name": "@codeeditorland/quasar-app-extension-studio-i18n",
 	"scripts": {}
 }
