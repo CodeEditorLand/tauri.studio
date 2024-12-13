@@ -12,6 +12,7 @@
 		"mermaid": "11.2.1",
 		"quasar": "2.17.0"
 	},
+	"devDependencies": {},
 	"quasar": {
 		"ssr": true
 	}
