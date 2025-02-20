@@ -2,6 +2,7 @@
 	"name": "docs-generator",
 	"description": "Tauri Documentation",
 	"scripts": {
+		"predeploy": "git pull && yarn install && quasar build -m ssr --debug && cd dist/ssr && yarn install",
 		"deploy:ssr-pm2": "pm2 start ./dist/ssr/index.js --name quasar-ssr",
 		"deploy:ssr-pm2_clusterize": "pm2 start ./dist/ssr/index.js --name quasar-ssr -i max",
 		"deploy:ssr-pm2_deep-monitoring": "pm2 start ./dist/ssr/index.js --name quasar-ssr --deep-monitoring",
@@ -11,8 +12,7 @@
 		"deploy:ssr-pm2_stop": "pm2 stop quasar-ssr",
 		"deploy:ssr-pm2_unmonitor": "pm2 unmonitor quasar-ssr",
 		"deploy:ssr-pm2_watch": "pm2 start ./dist/ssr/index.js --name quasar-ssr --watch ./dist/ssr",
-		"dev": "quasar dev",
-		"predeploy": "git pull && yarn install && quasar build -m ssr --debug && cd dist/ssr && yarn install"
+		"dev": "quasar dev"
 	},
 	"browserslist": [
 		"last 1 version, not dead, ie >= 11"
